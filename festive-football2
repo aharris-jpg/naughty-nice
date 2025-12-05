@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Festive Football Image</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #fafbfd;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .festive-frame {
+    padding: 22px;
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(199,30,52,0.85), rgba(0,166,118,0.85));
+    box-shadow:
+      0 0 18px rgba(199,30,52,0.25),
+      0 0 32px rgba(0,166,118,0.22);
+  }
+
+  .inner-wrap {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow:
+      inset 0 0 12px rgba(255, 255, 255, 0.7),
+      inset 0 0 22px rgba(0, 115, 89, 0.15);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="festive-frame">
+    <div class="inner-wrap">
+      <img src="https://images.unsplash.com/photo-1625982503303-5a3e849260a7?q=80&w=1436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+           alt="Football players on the field">
+    </div>
+  </div>
+
+</body>
+</html>
