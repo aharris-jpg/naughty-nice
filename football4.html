@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Festive Snow Football Image</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #fafbfd;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .festive-frame {
+    padding: 24px;
+    border-radius: 22px;
+    background:
+      radial-gradient(150% 200% at 100% 0%, rgba(255,255,255,.22) 0%, transparent 60%),
+      radial-gradient(150% 200% at 0% 0%, rgba(255,255,255,.14) 0%, transparent 65%),
+      linear-gradient(135deg,#7b1221 0%,#c71e34 35%,#0f3b33 100%);
+    box-shadow:
+      0 12px 26px rgba(0,0,0,.25),
+      0 0 0 2px rgba(255,255,255,.06),
+      0 0 22px rgba(199,30,52,.35);
+  }
+
+  .inner-wrap {
+    background:#ffffff;
+    border-radius:18px;
+    padding:16px;
+    box-shadow:
+      inset 0 0 14px rgba(255,255,255,.75),
+      inset 0 0 26px rgba(0,115,89,.18);
+  }
+
+  .snow-container {
+    position:relative;
+    overflow:hidden;
+    border-radius:14px;
+  }
+
+  .snow-container img {
+    display:block;
+    width:100%;
+    max-width:1100px;
+  }
+
+  /* SNOW LAYER */
+  .snow-layer {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+
+  .snowflake {
+    position:absolute;
+    top:-10%;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 6px rgba(255,255,255,.9);
+    opacity:.95;
+    animation:snowfall 8s linear infinite;
+  }
+
+  @keyframes snowfall {
+    0%   { transform:translate3d(0,-110%,0); opacity:0; }
+    10%  { opacity:1; }
+    100% { transform:translate3d(0,220%,0); opacity:0; }
+  }
+
+  /* Vary position, size, speed and delay for each flake */
+  .snowflake:nth-child(1)  { left:5%;  animation-duration:9s;  animation-delay:0s;  width:6px;height:6px; }
+  .snowflake:nth-child(2)  { left:12%; animation-duration:7s;  animation-delay:1s;  width:9px;height:9px; }
+  .snowflake:nth-child(3)  { left:20%; animation-duration:10s; animation-delay:2s;  }
+  .snowflake:nth-child(4)  { left:28%; animation-duration:8s;  animation-delay:0.5s; width:10px;height:10px; }
+  .snowflake:nth-child(5)  { left:36%; animation-duration:11s; animation-delay:1.5s; }
+  .snowflake:nth-child(6)  { left:44%; animation-duration:9s;  animation-delay:2.5s; width:7px;height:7px; }
+  .snowflake:nth-child(7)  { left:52%; animation-duration:8s;  animation-delay:0.8s; }
+  .snowflake:nth-child(8)  { left:60%; animation-duration:10s; animation-delay:1.8s; width:9px;height:9px; }
+  .snowflake:nth-child(9)  { left:68%; animation-duration:7.5s;animation-delay:2.8s; }
+  .snowflake:nth-child(10) { left:76%; animation-duration:12s; animation-delay:0.3s; width:11px;height:11px; }
+  .snowflake:nth-child(11) { left:84%; animation-duration:9.5s;animation-delay:1.3s; }
+  .snowflake:nth-child(12) { left:92%; animation-duration:8.5s;animation-delay:2.3s; width:7px;height:7px; }
+
+</style>
+</head>
+
+<body>
+  <div class="festive-frame">
+    <div class="inner-wrap">
+      <div class="snow-container">
+        <img
+          src="https://images.unsplash.com/photo-1527702596665-c7c5426d6fde?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Receiver catching a football in a stadium game">
+        <div class="snow-layer" aria-hidden="true">
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+          <div class="snowflake"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
