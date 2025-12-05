@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NFL Naughty &amp; Nice Index 2025</title>
+</head>
+
+<body style="margin:0;">
+
+<section class="an-xmas-naughty-nice" role="region" aria-labelledby="an-xmas-naughty-nice-title"
+  style="max-width:860px;margin:16px auto;
+         font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+         color:#18212f;background:#f5f3f0;
+         border-radius:16px;
+         border:1px solid #e3d6c8;
+         box-shadow:0 10px 30px rgba(148,92,53,.18);">
+
+  <style>
+    /* ==== Scoped styles for Christmas NFL Naughty & Nice toggle embed ========= */
+    section.an-xmas-naughty-nice,
+    section.an-xmas-naughty-nice * {
+      box-sizing:border-box;
+      font-family:inherit;
+      color:inherit;
+    }
+    section.an-xmas-naughty-nice { color-scheme:light; }
+
+    .an-xmas-naughty-nice{
+      --holly-red:#b8202a;
+      --holly-red-soft:#fbe8ea;
+      --pine-green:#0f5132;
+      --pine-green-soft:#e1f2ea;
+      --gold:#f4b41a;
+      --gold-soft:#fff7d6;
+      --ink:#18212f;
+      --muted:#6b7280;
+      --snow:#f7fbff;
+      --paper:#f5f3f0;
+      --border:#e3d6c8;
+      --border-soft:#efe3d7;
+    }
+
+    .an-xmas-naughty-nice .head{
+      padding:14px 18px 10px;
+      border-bottom:1px solid #e4d7ca;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,.3) 0px,
+          rgba(255,255,255,.3) 6px,
+          rgba(244,180,26,.20) 6px,
+          rgba(244,180,26,.20) 12px
+        ),
+        linear-gradient(120deg,#b8202a 0%,#e23d4c 35%,#0f5132 100%);
+      position:relative;
+      overflow:hidden;
+      color:#fff!important;
+    }
+    .an-xmas-naughty-nice .head::after{
+      content:"• Holiday Special •";
+      position:absolute;
+      right:18px;
+      top:12px;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.75);
+    }
+    .an-xmas-naughty-nice .title{
+      margin:0 0 4px;
+      font-size:clamp(16px,2.2vw,20px);
+      line-height:1.25;
+      font-weight:800;
+      letter-spacing:.02em;
+      color:#fff!important;
+    }
+    .an-xmas-naughty-nice .sub{
+      margin:0;
+      font-size:12px;
+      color:rgba(255,255,255,.94)!important;
+    }
+    .an-xmas-naughty-nice .meta{
+      margin:6px 0 0;
+      font-size:11px;
+      color:rgba(255,255,255,.9)!important;
+    }
+
+    .an-xmas-naughty-nice .controls{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:10px 16px 8px;
+      border-bottom:1px solid var(--border);
+      background:
+        radial-gradient(circle at 0 0,rgba(255,255,255,.9),transparent 50%),
+        radial-gradient(circle at 100% 0,rgba(244,180,26,.18),transparent 60%),
+        #fbf8f3;
+    }
+    .an-xmas-naughty-nice .toggle-label{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .an-xmas-naughty-nice .toggle-group{
+      display:inline-flex;
+      border-radius:999px;
+      padding:2px;
+      background:#fff;
+      border:1px solid #e5d8cc;
+      box-shadow:0 0 0 1px rgba(248,244,237,.9);
+    }
+    .an-xmas-naughty-nice .toggle-btn{
+      border:0;
+      background:transparent;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:12px;
+      line-height:1.2;
+      color:#6b7280;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+      transition:background .18s ease,color .18s ease,box-shadow .18s ease,transform .12s ease;
+    }
+    .an-xmas-naughty-nice .toggle-btn span.dot{
+      width:7px;height:7px;
+      border-radius:999px;
+      border:1px solid rgba(156,163,175,.7);
+      background:transparent;
+    }
+    .an-xmas-naughty-nice .toggle-btn[data-view="naughty"] span.dot{
+      border-color:var(--holly-red);
+    }
+    .an-xmas-naughty-nice .toggle-btn[data-view="nice"] span.dot{
+      border-color:var(--pine-green);
+    }
+    .an-xmas-naughty-nice .toggle-btn.is-active{
+      color:#0f172a;
+      background:linear-gradient(135deg,var(--gold-soft),#fff);
+      box-shadow:0 0 0 1px rgba(248,231,195,.9),0 8px 20px rgba(148,92,53,.25);
+      transform:translateY(-1px);
+    }
+    .an-xmas-naughty-nice .toggle-btn.is-active[data-view="naughty"] span.dot{
+      background:var(--holly-red);
+    }
+    .an-xmas-naughty-nice .toggle-btn.is-active[data-view="nice"] span.dot{
+      background:var(--pine-green);
+    }
+
+    .an-xmas-naughty-nice .body{
+      padding:10px 12px 12px;
+      background:
+        radial-gradient(circle at 0 0,rgba(255,255,255,.9),transparent 60%),
+        radial-gradient(circle at 100% 100%,rgba(15,81,50,.06),transparent 55%),
+        #f5f3f0;
+    }
+    .an-xmas-naughty-nice .list{
+      max-height:min(64vh,520px);
+      overflow:auto;
+      -webkit-overflow-scrolling:touch;
+      padding:2px 2px 4px;
+    }
+    .an-xmas-naughty-nice .list::-webkit-scrollbar{ width:8px; height:8px }
+    .an-xmas-naughty-nice .list::-webkit-scrollbar-track{ background:#f5f3f0; border-radius:999px }
+    .an-xmas-naughty-nice .list::-webkit-scrollbar-thumb{
+      background:linear-gradient(180deg,var(--holly-red),var(--pine-green));
+      border-radius:999px;
+      border:2px solid #f5f3f0;
+    }
+
+    .an-xmas-naughty-nice .list-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:0 0 6px;
+      padding:0 4px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#6b7280;
+    }
+    .an-xmas-naughty-nice .list-title span.tag{
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid #e5d8cc;
+      background:#fff;
+      font-size:11px;
+      text-transform:none;
+      letter-spacing:0;
+      color:#6b7280;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+    }
+    .an-xmas-naughty-nice .list[data-mode="naughty"] .list-title span.tag::before{
+      content:"🧱";
+    }
+    .an-xmas-naughty-nice .list[data-mode="nice"] .list-title span.tag::before{
+      content:"🎁";
+    }
+
+    .an-xmas-naughty-nice .row{
+      display:grid;
+      grid-template-columns:30px minmax(0,1.35fr) minmax(0,1.1fr);
+      gap:8px;
+      align-items:center;
+      padding:8px 9px;
+      margin:5px 0;
+      border-radius:11px;
+      border:1px solid var(--border-soft);
+      background:
+        radial-gradient(circle at 0 0,rgba(255,255,255,.9),transparent 65%),
+        #fff;
+      box-shadow:0 1px 3px rgba(15,23,42,.08);
+      transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease,background-color .14s ease;
+    }
+    .an-xmas-naughty-nice .row:hover{
+      transform:translateY(-1px);
+      border-color:#e0ccb7;
+      box-shadow:0 10px 24px rgba(148,92,53,.22);
+      background:
+        radial-gradient(circle at 0 0,rgba(248,191,26,.16),transparent 62%),
+        #fff;
+    }
+
+    @media (max-width:640px){
+      .an-xmas-naughty-nice .row{
+        grid-template-columns:26px minmax(0,1fr);
+      }
+      .an-xmas-naughty-nice .metric{
+        grid-column:1 / -1;
+        margin-left:26px;
+      }
+    }
+
+    .an-xmas-naughty-nice .rank{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-variant-numeric:tabular-nums;
+      font-size:12px;
+      color:#6b7280;
+    }
+    .an-xmas-naughty-nice .rank span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:22px;height:22px;
+      border-radius:999px;
+      border:1px solid #e5d8cc;
+      background:#fff7ed;
+    }
+    .an-xmas-naughty-nice .row[data-rank="1"] .rank span{
+      background:radial-gradient(circle at 30% 25%,#fff 0%,#fde68a 40%,#f59e0b 100%);
+      border-color:#f59e0b;
+      color:#78350f;
+      font-weight:800;
+    }
+
+    .an-xmas-naughty-nice .team{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+    .an-xmas-naughty-nice .team-main{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-size:13px;
+      font-weight:600;
+      color:#111827;
+    }
+    .an-xmas-naughty-nice .team-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:2px 7px;
+      border-radius:999px;
+      font-size:10px;
+      white-space:nowrap;
+      background:#fff;
+      border:1px solid #e5d8cc;
+      color:#6b7280;
+    }
+    .an-xmas-naughty-nice .team-pill.naughty{
+      border-color:rgba(184,32,42,.75);
+      background:var(--holly-red-soft);
+      color:#7b1221;
+    }
+    .an-xmas-naughty-nice .team-pill.nice{
+      border-color:rgba(15,81,50,.75);
+      background:var(--pine-green-soft);
+      color:#0f5132;
+    }
+
+    .an-xmas-naughty-nice .team-sub{
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    .an-xmas-naughty-nice .metric{
+      position:relative;
+      height:26px;
+      border-radius:999px;
+      overflow:hidden;
+      background:#f3eee8;
+      border:1px solid #e4d7ca;
+    }
+    .an-xmas-naughty-nice .metric .bar{
+      position:absolute;
+      inset:0 auto 0 0;
+      border-radius:999px;
+      background:linear-gradient(90deg,#f97373,#b8202a);
+      box-shadow:inset 0 0 0 1px rgba(148,92,53,.08);
+    }
+    .an-xmas-naughty-nice .list[data-mode="nice"] .metric .bar{
+      background:linear-gradient(90deg,#0f5132,#34d399);
+    }
+    .an-xmas-naughty-nice .metric-inner{
+      position:absolute;
+      inset:0 8px 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:6px;
+      font-size:11px;
+      font-variant-numeric:tabular-nums;
+    }
+    .an-xmas-naughty-nice .chip{
+      padding:3px 7px;
+      border-radius:999px;
+      background:#fffdf7;
+      border:1px solid #e5d8cc;
+      white-space:nowrap;
+    }
+    .an-xmas-naughty-nice .chip.score{
+      color:#111827;
+      font-weight:600;
+    }
+    .an-xmas-naughty-nice .chip.note{
+      color:#6b7280;
+      font-size:10px;
+    }
+
+    /* Footer + embed */
+    .an-xmas-naughty-nice .footer{
+      border-top:1px solid var(--border);
+      padding:7px 10px;
+      background:
+        linear-gradient(120deg,#0f5132 0%,#198754 45%,#b8202a 100%);
+      color:#fff;
+      position:relative;
+      overflow:visible;
+    }
+    .an-xmas-naughty-nice .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:11px;
+    }
+    .an-xmas-naughty-nice .brand{
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:rgba(255,255,255,.9);
+      font-weight:500;
+    }
+    .an-xmas-naughty-nice .embed-btn{
+      position:absolute;
+      left:12px;
+      background:#f4b41a;
+      color:#3b1f00;
+      border-radius:8px;
+      border:1px solid #e0a417;
+      padding:5px 12px;
+      font-size:12px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      transition:.18s ease;
+    }
+    .an-xmas-naughty-nice .embed-btn::before{
+      content:"</>";
+      font-size:11px;
+    }
+    .an-xmas-naughty-nice .embed-btn:hover{
+      background:#facc15;
+      border-color:#eab308;
+    }
+
+    .an-xmas-naughty-nice .embed-wrapper{
+      position:absolute;
+      bottom:calc(100% + 10px);
+      left:50%;
+      transform:translateX(-50%);
+      width:min(560px,calc(100% - 24px));
+      display:none;
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid #e5d8cc;
+      background:#fffdf7;
+      box-shadow:0 18px 40px rgba(94,53,34,.4);
+      color:#111827;
+      z-index:40;
+    }
+    .an-xmas-naughty-nice .embed-wrapper::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-8px;
+      border:8px solid transparent;
+      border-top-color:#fffdf7;
+      filter:drop-shadow(0 1px 1px rgba(148,92,53,.35));
+    }
+    .an-xmas-naughty-nice .embed-wrapper textarea{
+      width:100%;
+      height:140px;
+      font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+      color:#111827;
+      background:#f9f5ee;
+      border-radius:8px;
+      border:1px solid #e5d8cc;
+      padding:10px 12px;
+      resize:none;
+    }
+    .an-xmas-naughty-nice #nn-copy-status{
+      display:none;
+      color:#15803d;
+      font-size:12px;
+      margin-top:6px;
+    }
+
+    @media (max-width:640px){
+      .an-xmas-naughty-nice .controls{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .an-xmas-naughty-nice .toggle-group{
+        width:100%;
+        justify-content:space-between;
+      }
+      .an-xmas-naughty-nice .embed-btn{
+        position:static;
+        margin-bottom:4px;
+      }
+      .an-xmas-naughty-nice .footer-inner{
+        justify-content:space-between;
+      }
+    }
+  </style>
+
+  <div class="head">
+    <h3 id="an-xmas-naughty-nice-title" class="title">NFL Naughty &amp; Nice Index 2025</h3>
+    <p class="sub"><em>Top 5 naughtiest and top 5 nicest NFL teams, based on penalties, penalty yards, and Action Network’s Naughty &amp; Nice scores.</em></p>
+    <p class="meta">2024 regular-season discipline, re-scored for the holidays: coal-worthy flags on one side, Santa-approved restraint on the other.</p>
+  </div>
+
+  <div class="controls">
+    <div class="toggle-label">Choose your list:</div>
+    <div class="toggle-group" role="tablist" aria-label="Naughty and Nice lists">
+      <button class="toggle-btn is-active" data-view="naughty" role="tab" aria-selected="true">
+        <span class="dot"></span> Naughty List
+      </button>
+      <button class="toggle-btn" data-view="nice" role="tab" aria-selected="false">
+        <span class="dot"></span> Nice List
+      </button>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- Naughty List -->
+    <div class="list" data-mode="naughty" aria-label="Top 5 naughtiest teams">
+      <div class="list-title">
+        <span>Top 5 Naughtiest Teams</span>
+        <span class="tag">More coal than cookies</span>
+      </div>
+
+      <!-- 1. Washington -->
+      <div class="row" data-rank="1">
+        <div class="rank"><span>1</span></div>
+        <div class="team">
+          <div class="team-main">
+            Washington Commanders
+            <span class="team-pill naughty">Most DPIs in the NFL</span>
+          </div>
+          <div class="team-sub">129 penalties, 1,071 yards, 22 DPIs, just 1 clean game.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:100%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NaughtyScore 84.83</span>
+            <span class="chip note">Ranked #1 naughty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Houston -->
+      <div class="row" data-rank="2">
+        <div class="rank"><span>2</span></div>
+        <div class="team">
+          <div class="team-main">
+            Houston Texans
+            <span class="team-pill naughty">Most penalty yards</span>
+          </div>
+          <div class="team-sub">135 penalties, 1,149 yards, 11 unnecessary-roughness flags.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:79.63%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NaughtyScore 67.55</span>
+            <span class="chip note">Ranked #2 naughty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Tennessee -->
+      <div class="row" data-rank="3">
+        <div class="rank"><span>3</span></div>
+        <div class="team">
+          <div class="team-main">
+            Tennessee Titans
+            <span class="team-pill naughty">Flags early &amp; often</span>
+          </div>
+          <div class="team-sub">132 penalties, 7.8 per game, 10 DPIs, only 1 clean outing.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:66.53%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NaughtyScore 56.44</span>
+            <span class="chip note">Ranked #3 naughty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Baltimore -->
+      <div class="row" data-rank="4">
+        <div class="rank"><span>4</span></div>
+        <div class="team">
+          <div class="team-main">
+            Baltimore Ravens
+            <span class="team-pill naughty">Most penalties overall</span>
+          </div>
+          <div class="team-sub">140 penalties, 1,177 yards, 7 RTP, 16 DPIs.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:98.69%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NaughtyScore 83.72</span>
+            <span class="chip note">Ranked #4 naughty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. New Orleans -->
+      <div class="row" data-rank="5">
+        <div class="rank"><span>5</span></div>
+        <div class="team">
+          <div class="team-main">
+            New Orleans Saints
+            <span class="team-pill naughty">High-emotion flags</span>
+          </div>
+          <div class="team-sub">110 penalties, 1,003 yards, 12 UR, 18 DPIs.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:82.9%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NaughtyScore 70.32</span>
+            <span class="chip note">Ranked #5 naughty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nice List -->
+    <div class="list" data-mode="nice" aria-label="Top 5 nicest teams" style="display:none;">
+      <div class="list-title">
+        <span>Top 5 Nicest Teams</span>
+        <span class="tag">Deserve extra gifts</span>
+      </div>
+
+      <!-- 1. Indianapolis -->
+      <div class="row" data-rank="1">
+        <div class="rank"><span>1</span></div>
+        <div class="team">
+          <div class="team-main">
+            Indianapolis Colts
+            <span class="team-pill nice">Fewest penalty yards</span>
+          </div>
+          <div class="team-sub">93 penalties, 684 yards, 4 clean games — league’s calmest profile.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:90.17%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NiceScore 87.17</span>
+            <span class="chip note">Ranked #1 nice</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Las Vegas -->
+      <div class="row" data-rank="2">
+        <div class="rank"><span>2</span></div>
+        <div class="team">
+          <div class="team-main">
+            Las Vegas Raiders
+            <span class="team-pill nice">Most clean games</span>
+          </div>
+          <div class="team-sub">96 penalties, 807 yards, 5 clean games — tied for NFL lead.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:100%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NiceScore 96.67</span>
+            <span class="chip note">Ranked #2 nice</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Arizona -->
+      <div class="row" data-rank="3">
+        <div class="rank"><span>3</span></div>
+        <div class="team">
+          <div class="team-main">
+            Arizona Cardinals
+            <span class="team-pill nice">Rebuild with restraint</span>
+          </div>
+          <div class="team-sub">92 penalties, 806 yards, 4 clean games.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:91.03%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NiceScore 88.00</span>
+            <span class="chip note">Ranked #3 nice</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Los Angeles Chargers -->
+      <div class="row" data-rank="4">
+        <div class="rank"><span>4</span></div>
+        <div class="team">
+          <div class="team-main">
+            Los Angeles Chargers
+            <span class="team-pill nice">Quietly disciplined</span>
+          </div>
+          <div class="team-sub">98 penalties, 728 yards, 4 clean games, just 1 RTP.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:85.86%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NiceScore 83.00</span>
+            <span class="chip note">Ranked #4 nice</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Cincinnati -->
+      <div class="row" data-rank="5">
+        <div class="rank"><span>5</span></div>
+        <div class="team">
+          <div class="team-main">
+            Cincinnati Bengals
+            <span class="team-pill nice">Five clean games</span>
+          </div>
+          <div class="team-sub">101 penalties, 780 yards, 5 clean games, 3 RTP.</div>
+        </div>
+        <div class="metric">
+          <span class="bar" style="width:95.69%;"></span>
+          <div class="metric-inner">
+            <span class="chip score">NiceScore 92.50</span>
+            <span class="chip note">Ranked #5 nice</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="nn-embed-btn" class="embed-btn" aria-controls="nn-embed-wrapper" aria-expanded="false">
+      Embed this chart
+    </button>
+    <div class="footer-inner">
+      <span class="brand">Action Network • Naughty &amp; Nice Index 2025</span>
+    </div>
+
+    <div id="nn-embed-wrapper" class="embed-wrapper">
+      <textarea id="nn-embed-code" readonly>&lt;iframe
+  src="https://example.com/nfl-naughty-nice-2025.html"
+  title="NFL Naughty &amp; Nice Index 2025"
+  width="100%" height="580"
+  scrolling="no"
+  style="border:0;" loading="lazy"&gt;&lt;/iframe&gt;</textarea>
+      <p id="nn-copy-status">Embed code copied!</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      // Toggle logic
+      const toggles = document.querySelectorAll('.an-xmas-naughty-nice .toggle-btn');
+      const lists   = document.querySelectorAll('.an-xmas-naughty-nice .list');
+
+      toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const view = btn.getAttribute('data-view');
+          // Update active state
+          toggles.forEach(b => {
+            const isActive = b === btn;
+            b.classList.toggle('is-active', isActive);
+            b.setAttribute('aria-selected', String(isActive));
+          });
+          // Show corresponding list
+          lists.forEach(list => {
+            const mode = list.getAttribute('data-mode');
+            list.style.display = (mode === view) ? 'block' : 'none';
+          });
+        });
+      });
+
+      // Embed logic
+      const btn     = document.getElementById('nn-embed-btn');
+      const wrapper = document.getElementById('nn-embed-wrapper');
+      const ta      = document.getElementById('nn-embed-code');
+      const status  = document.getElementById('nn-copy-status');
+
+      if (btn && wrapper && ta && status) {
+        btn.addEventListener('click', () => {
+          const isHidden = (wrapper.style.display === '' || wrapper.style.display === 'none');
+          wrapper.style.display = isHidden ? 'block' : 'none';
+          btn.setAttribute('aria-expanded', String(isHidden));
+          btn.textContent = isHidden ? 'Hide embed code' : 'Embed this chart';
+
+          if (isHidden) {
+            ta.focus();
+            ta.select();
+            try {
+              document.execCommand('copy');
+              status.style.display = 'block';
+              setTimeout(() => { status.style.display = 'none'; }, 2300);
+            } catch (e) {}
+          }
+        });
+
+        document.addEventListener('click', (e)=>{
+          const open = wrapper.style.display === 'block';
+          if (!open) return;
+          if (!wrapper.contains(e.target) && !btn.contains(e.target)) {
+            wrapper.style.display = 'none';
+            btn.setAttribute('aria-expanded','false');
+            btn.textContent = 'Embed this chart';
+          }
+        });
+
+        document.addEventListener('keydown', (e)=>{
+          if (e.key === 'Escape' && wrapper.style.display === 'block') {
+            wrapper.style.display = 'none';
+            btn.setAttribute('aria-expanded','false');
+            btn.textContent = 'Embed this chart';
+            btn.focus();
+          }
+        });
+      }
+    })();
+  </script>
+</section>
+
+</body>
+</html>
